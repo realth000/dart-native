@@ -27,7 +27,7 @@ endif()
 
 if (ANDROID)
 	target_link_libraries(jni log)
-	target_link_options(jni PRIVATE "-Wl,-z,max-page-size=16384")
+	target_link_options(jni PRIVATE "-Wl,-z,max-page-size=16384,--build-id=none")
 else()
 	find_package(JNI REQUIRED COMPONENTS JVM)
 	include_directories(${JNI_INCLUDE_DIRS})
